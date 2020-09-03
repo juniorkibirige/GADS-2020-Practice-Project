@@ -13,4 +13,7 @@
     <string name="dummy_learner_name">Dummy Learner Name</string>
     <string name="image">Image</string>
     <string name="dummy_learner_data">Dummy Learner Data</string>
+    <string name="project_submission">Project Submission</string>
+    <string name="back_button">Back Button</string>
+    <string name="main_to_submit">Main_to_Submit</string>
 </resources>
