@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">GADS Leaderboard</string>
+    <string name="gads_leadership_logo">GADS Leadership Logo</string>
+    <string name="main_activity_label">LEADERBOARD</string>
+    <string name="submit">Submit</string>
+    <string name="learning_leaders">Learning Leaders</string>
+    <string name="skill_iq_leaders">Skill IQ Leaders</string>
+    <string name="title_activity_main2">MainActivity2</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="dummy_learner_name">Dummy Learner Name</string>
+    <string name="image">Image</string>
+    <string name="dummy_learner_data">Dummy Learner Data</string>
+</resources>
