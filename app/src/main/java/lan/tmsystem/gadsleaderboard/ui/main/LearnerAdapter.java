@@ -4,26 +4,23 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import lan.tmsystem.gadsleaderboard.R;
+import lan.tmsystem.gadsleaderboard.models.Hours;
 
 public class LearnerAdapter extends RecyclerView.Adapter<LearnerAdapter.ViewHolder> {
-    ArrayList items;
-    private final Context mContext;
+    List<Hours> items;
     private static LayoutInflater mLayoutInflater;
 
-    public LearnerAdapter(ArrayList items, Context context) {
+    public LearnerAdapter(List<Hours> items, Context context) {
         this.items = items;
-        mContext = context;
-        mLayoutInflater = LayoutInflater.from(mContext);
+        mLayoutInflater = LayoutInflater.from(context);
     }
 
     @NonNull
@@ -35,9 +32,11 @@ public class LearnerAdapter extends RecyclerView.Adapter<LearnerAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        String name = (String) items.get(position);
-        String data = name.concat(" Data");
-        holder.bind(name, data);
+        String name = (String) items.get(position).getNames();
+        String hours = items.get(position).getHours();
+        String country = items.get(position).getCountry();
+        String badgeUrl = items.get(position).getBadgeUrl();
+        holder.bind(name, hours, country, badgeUrl);
     }
 
     @Override
@@ -55,9 +54,9 @@ public class LearnerAdapter extends RecyclerView.Adapter<LearnerAdapter.ViewHold
             learnerData = itemView.findViewById(R.id.learner_data);
         }
 
-        public void bind(final String name, final String data) {
+        public void bind(final String name, final String data, final String country, final String badgeUrl) {
             learnerName.setText(name);
-            learnerData.setText(data);
+            learnerData.setText(data.concat(" learning hours, ").concat(country).concat("."));
         }
     }
 }

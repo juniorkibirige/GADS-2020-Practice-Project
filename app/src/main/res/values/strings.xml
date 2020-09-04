@@ -16,4 +16,5 @@
     <string name="project_submission">Project Submission</string>
     <string name="back_button">Back Button</string>
     <string name="main_to_submit">Main_to_Submit</string>
+    <string name="top_left">top_left</string>
 </resources>
