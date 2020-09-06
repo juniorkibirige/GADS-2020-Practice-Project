@@ -180,8 +180,7 @@ public class ConnectionFrag extends Fragment {
                 for (int i = 0; i < hours.length(); i++) {
                     JSONObject h = hours.getJSONObject(i);
 
-                    Log.d("pS", String.valueOf(h));
-                SkillIq skillIq = new SkillIq(h.getString("name"), h.getString("hours"), h.getString("country"), h.getString("badgeUrl"));
+                SkillIq skillIq = new SkillIq(h.getString("name"), h.getString("score"), h.getString("country"), h.getString("badgeUrl"));
                 DataManager.getInstance().addSkillIq(skillIq);
                 }
                 publishProgress(DownloadCallback.Progress.PROCESS_INPUT_STREAM_SUCCESS);
@@ -198,7 +197,7 @@ public class ConnectionFrag extends Fragment {
                 for (int i = 0; i < hours.length(); i++) {
                     JSONObject h = hours.getJSONObject(i);
 
-                    Hours hours1 = new Hours(h.getString("name"), h.getString("score"), h.getString("country"), h.getString("badgeUrl"));
+                    Hours hours1 = new Hours(h.getString("name"), h.getString("hours"), h.getString("country"), h.getString("badgeUrl"));
                     DataManager.getInstance().addHours(hours1);
                 }
                 publishProgress(DownloadCallback.Progress.PROCESS_INPUT_STREAM_SUCCESS);

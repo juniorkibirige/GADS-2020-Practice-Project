@@ -13,13 +13,6 @@ import androidx.fragment.app.FragmentActivity;
 
 import com.google.android.material.snackbar.Snackbar;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import lan.tmsystem.gadsleaderboard.models.Hours;
-import lan.tmsystem.gadsleaderboard.models.SkillIq;
-
 public class SplashScreen extends FragmentActivity implements DownloadCallback<String> {
     Handler mHandler;
     DataManager mDataManager;
@@ -46,14 +39,23 @@ public class SplashScreen extends FragmentActivity implements DownloadCallback<S
             @Override
             public void run() {
                 if(!DataManager.getInstance().getData().equals("") && !DataManager.getInstance().getSkilliq().equals("")) {
-//                    ProcessHours(DataManager.getInstance().getData());
-//                    ProcessSkills(DataManager.getInstance().getSkilliq());
                     Intent intent = new Intent(SplashScreen.this, MainActivity.class);
                     startActivity(intent);
                     finish();
                 }
             }
-        }, 7000);
+        }, 5000);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        this.getWindow().getDecorView().setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_FULLSCREEN
+                        | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
     }
 
     private void startDownload() {
@@ -66,8 +68,10 @@ public class SplashScreen extends FragmentActivity implements DownloadCallback<S
     @Override
     public void updateFromDownload(String result) {
         Log.d("UpdateDownload", result);
-        View view = (View) findViewById(R.id.cLayout);
-        Snackbar.make(view, result, Snackbar.LENGTH_LONG).show();
+        if(result.contains("No address associated with hostname")){
+            View view = (View) findViewById(R.id.cLayout);
+            Snackbar.make(view, result, Snackbar.LENGTH_LONG).show();
+        }
     }
 
     @Override

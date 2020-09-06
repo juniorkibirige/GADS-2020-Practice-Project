@@ -35,7 +35,7 @@ public final class SkillIq implements Parcelable {
         }
     };
 
-    public String getName() {
+    public String getNames() {
         return name;
     }
 
