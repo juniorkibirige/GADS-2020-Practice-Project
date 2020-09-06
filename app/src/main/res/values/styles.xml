@@ -12,6 +12,15 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="AppTheme.editText" parent="Widget.AppCompat.EditText">
+        <item name="android:bottomLeftRadius">20dp</item>
+        <item name="android:bottomRightRadius">20dp</item>
+        <item name="android:topRightRadius">20dp</item>
+        <item name="android:topLeftRadius">20dp</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:background">#FFFFFF</item>
+    </style>
+
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
