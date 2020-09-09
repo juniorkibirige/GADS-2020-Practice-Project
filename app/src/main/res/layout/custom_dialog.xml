@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/custom_dialog"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#34373434">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="280dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginEnd="18dp"
+        android:background="@drawable/custom_dialog_shape"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/errorIcon"
+                android:layout_width="0dp"
+                android:layout_height="180dp"
+                android:layout_marginTop="30dp"
+                android:contentDescription="@string/error_in_submission"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_baseline_warning_24" />
+
+            <ImageView
+                android:id="@+id/successIcon"
+                android:layout_width="0dp"
+                android:layout_height="180dp"
+                android:layout_marginTop="30dp"
+                android:contentDescription="@string/submission_successful"
+                app:layout_constraintBottom_toBottomOf="@+id/errorIcon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/errorIcon"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_baseline_check_circle_24" />
+
+            <TextView
+                android:id="@+id/successText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/submission_successful"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/errorIcon" />
+
+            <TextView
+                android:id="@+id/errorText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/submission_not_successful"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/errorIcon" />
+
+            <ImageButton
+                android:id="@+id/btnC"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="16dp"
+                android:background="#FFFFFF"
+                android:contentDescription="@string/notsure"
+                android:minWidth="50dp"
+                android:minHeight="50dp"
+                android:scaleType="fitXY"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.951"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_baseline_cancel_24" />
+
+            <TextView
+                android:id="@+id/confSubText"
+                android:layout_width="229dp"
+                android:layout_height="41dp"
+                android:text="@string/are_you_sure"
+                android:textAlignment="textEnd"
+                android:textColor="#2B2727"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/errorIcon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/errorIcon" />
+
+            <TextView
+                android:id="@+id/confSubExtension"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:text="@string/question_mark"
+                android:textAlignment="textStart"
+                android:textColor="#2B2727"
+                android:textSize="30sp"
+                app:layout_constraintBottom_toBottomOf="@+id/confSubText"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/confSubText"
+                app:layout_constraintTop_toTopOf="@+id/errorIcon"
+                app:layout_constraintVertical_bias="0.887" />
+
+            <Button
+                android:id="@+id/confSubBtn"
+                style="@style/Widget.AppCompat.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Yes"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/confSubText" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

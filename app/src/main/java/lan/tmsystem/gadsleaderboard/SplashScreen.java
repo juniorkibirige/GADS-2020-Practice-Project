@@ -68,9 +68,26 @@ public class SplashScreen extends FragmentActivity implements DownloadCallback<S
     @Override
     public void updateFromDownload(String result) {
         Log.d("UpdateDownload", result);
-        if(result.contains("No address associated with hostname")){
+        if (result.contains("No address associated with hostname") || result.contains("Failed to connect")) {
             View view = (View) findViewById(R.id.cLayout);
-            Snackbar.make(view, result, Snackbar.LENGTH_LONG).show();
+            Snackbar.make(view, "Check your Internet Connection!", 5000).show();
+            mHandler = new Handler();
+            mHandler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    finish();
+                }
+            }, 6000);
+        } else if (result.contains("timed out")) {
+            View view = (View) findViewById(R.id.cLayout);
+            Snackbar.make(view, "Connection Timed Out!", 5000).show();
+            mHandler = new Handler();
+            mHandler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    finish();
+                }
+            }, 6000);
         }
     }
 

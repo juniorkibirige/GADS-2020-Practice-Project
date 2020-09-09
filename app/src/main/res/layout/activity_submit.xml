@@ -197,6 +197,56 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtGithub" />
+
+        <ImageView
+            android:id="@+id/errorFirst"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/error"
+            app:layout_constraintBottom_toBottomOf="@+id/txtFirstName"
+            app:layout_constraintEnd_toEndOf="@+id/txtFirstName"
+            app:layout_constraintHorizontal_bias="0.929"
+            app:layout_constraintStart_toStartOf="@+id/txtFirstName"
+            app:layout_constraintTop_toTopOf="@+id/txtFirstName"
+            app:srcCompat="@drawable/ic_baseline_error_outline_24" />
+
+        <ImageView
+            android:id="@+id/errorLast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/error"
+            app:layout_constraintBottom_toBottomOf="@+id/txtLastName"
+            app:layout_constraintEnd_toEndOf="@+id/txtLastName"
+            app:layout_constraintHorizontal_bias="0.96"
+            app:layout_constraintStart_toStartOf="@+id/txtLastName"
+            app:layout_constraintTop_toTopOf="@+id/txtLastName"
+            app:srcCompat="@drawable/ic_baseline_error_outline_24" />
+
+        <ImageView
+            android:id="@+id/errorEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/error"
+            app:layout_constraintBottom_toBottomOf="@+id/txtEmail"
+            app:layout_constraintEnd_toEndOf="@+id/txtEmail"
+            app:layout_constraintHorizontal_bias="0.978"
+            app:layout_constraintStart_toStartOf="@+id/txtEmail"
+            app:layout_constraintTop_toTopOf="@+id/txtEmail"
+            app:layout_constraintVertical_bias="0.444"
+            app:srcCompat="@drawable/ic_baseline_error_outline_24" />
+
+        <ImageView
+            android:id="@+id/errorLink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/error"
+            app:layout_constraintBottom_toBottomOf="@+id/txtGithub"
+            app:layout_constraintEnd_toEndOf="@+id/txtGithub"
+            app:layout_constraintHorizontal_bias="0.978"
+            app:layout_constraintStart_toStartOf="@+id/txtGithub"
+            app:layout_constraintTop_toTopOf="@+id/txtGithub"
+            app:srcCompat="@drawable/ic_baseline_error_outline_24" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

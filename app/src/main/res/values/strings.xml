@@ -17,4 +17,11 @@
     <string name="last_name">Last Name</string>
     <string name="email_address">Email Address</string>
     <string name="project_on_github_link">Project on GITHUB (link)</string>
+    <string name="error">error</string>
+    <string name="error_in_submission">Error in Submission</string>
+    <string name="submission_not_successful">Submission not Successful</string>
+    <string name="submission_successful">Submission Successful</string>
+    <string name="notsure">notSure</string>
+    <string name="question_mark">\?</string>
+    <string name="are_you_sure">Are you sure</string>
 </resources>

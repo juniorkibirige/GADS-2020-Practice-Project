@@ -20,6 +20,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
+import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 
@@ -93,7 +94,8 @@ public class ConnectionFrag extends Fragment {
         private static int retrn = 1;
         private static int process = 1;
         private DownloadCallback<String> callback;
-        String[] urls = {"https://gadsapi.herokuapp.com/api/hours", "https://gadsapi.herokuapp.com/api/skilliq"};
+        //        String[] urls = {"https://gadsapi.herokuapp.com/api/hours", "https://gadsapi.herokuapp.com/api/skilliq"};
+        String[] urls = {"http://10.0.2.2:5500/api/hours", "http://10.0.2.2:5500/api/skilliq"};
 
         DownloadTask(DownloadCallback<String> callback) {
             setCallback(callback);
@@ -121,8 +123,7 @@ public class ConnectionFrag extends Fragment {
             Result result = null;
             urls = this.urls;
             if (!isCancelled() && urls != null && urls.length > 0) {
-                for (int i = 0; i < urls.length; i++) {
-                    String urlString = urls[i];
+                for (String urlString : urls) {
                     try {
                         URL url = new URL(urlString);
                         String resultString = downloadUrl(url);
@@ -232,10 +233,11 @@ public class ConnectionFrag extends Fragment {
 
         private String downloadUrl(URL url) throws IOException {
             InputStream stream = null;
-            HttpsURLConnection connection = null;
+//            HttpsURLConnection connection = null;
+            HttpURLConnection connection = null;
             String result = null;
             try {
-                connection = (HttpsURLConnection) url.openConnection();
+                connection = (HttpURLConnection) url.openConnection();
                 connection.setReadTimeout(3000);
                 connection.setConnectTimeout(3000);
                 connection.setRequestMethod("GET");
