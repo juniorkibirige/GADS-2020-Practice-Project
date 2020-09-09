@@ -95,7 +95,6 @@ public class ConnectionFrag extends Fragment {
         private static int process = 1;
         private DownloadCallback<String> callback;
         String[] urls = {"https://gadsapi.herokuapp.com/api/hours", "https://gadsapi.herokuapp.com/api/skilliq"};
-//        String[] urls = {"http://10.0.2.2:5500/api/hours", "http://10.0.2.2:5500/api/skilliq"};
 
         DownloadTask(DownloadCallback<String> callback) {
             setCallback(callback);
