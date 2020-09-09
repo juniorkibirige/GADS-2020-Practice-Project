@@ -25,7 +25,7 @@ public class SplashScreen extends FragmentActivity implements DownloadCallback<S
         setContentView(R.layout.splashscreen);
         mDataManager = DataManager.getInstance();
 
-        mConnectionFrag = ConnectionFrag.getInstance(getSupportFragmentManager(), new String[] {"https://gadsapi.herokuapp.com/api/hours", "https://gadsapi.herokuapp.com/api/skilliq"});
+        mConnectionFrag = ConnectionFrag.getInstance(getSupportFragmentManager(), new String[]{"https://gadsapi.herokuapp.com/api/hours", "https://gadsapi.herokuapp.com/api/skilliq"});
         mHandler = new Handler();
         mHandler.postDelayed(new Runnable() {
             @Override
@@ -33,17 +33,16 @@ public class SplashScreen extends FragmentActivity implements DownloadCallback<S
                 startDownload();
             }
         }, 1500);
-        mHandler = new Handler();
-        mHandler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                if (!DataManager.getInstance().getData().equals("") && !DataManager.getInstance().getSkilliq().equals("")) {
-                    Intent intent = new Intent(SplashScreen.this, MainActivity.class);
-                    startActivity(intent);
-                    finish();
-                }
-            }
-        }, 4000);
+//        mHandler.postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//                if (!DataManager.getInstance().getData().equals("") && !DataManager.getInstance().getSkilliq().equals("")) {
+//                    Intent intent = new Intent(SplashScreen.this, MainActivity.class);
+//                    startActivity(intent);
+//                    finish();
+//                }
+//            }
+//        }, 2000);
     }
 
     @Override
@@ -127,6 +126,8 @@ public class SplashScreen extends FragmentActivity implements DownloadCallback<S
     public void finishDownloading() {
         downloading = false;
         mConnectionFrag.cancelDownload();
-
+        Intent intent = new Intent(SplashScreen.this, MainActivity.class);
+        startActivity(intent);
+        finish();
     }
 }

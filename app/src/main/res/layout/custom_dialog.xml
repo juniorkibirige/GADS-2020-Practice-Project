@@ -7,10 +7,10 @@
     android:background="#34373434">
 
     <LinearLayout
-        android:layout_width="390dp"
+        android:layout_width="350dp"
         android:layout_height="280dp"
-        android:layout_marginStart="18dp"
-        android:layout_marginEnd="18dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
         android:background="@drawable/custom_dialog_shape"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -19,8 +19,9 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal">
 
             <ImageView
                 android:id="@+id/errorIcon"
@@ -65,7 +66,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/submission_not_successful"
                 android:textColor="#221D1D"
-                android:textSize="28sp"
+                android:textSize="24sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -76,30 +77,34 @@
                 android:id="@+id/btnC"
                 android:layout_width="45dp"
                 android:layout_height="45dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="-20dp"
                 android:background="#FFFFFF"
                 android:contentDescription="@string/notsure"
                 android:minWidth="50dp"
                 android:minHeight="50dp"
                 android:scaleType="fitXY"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.951"
+                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/ic_baseline_cancel_24" />
 
             <TextView
                 android:id="@+id/confSubText"
-                android:layout_width="282dp"
+                android:layout_width="0dp"
                 android:layout_height="46dp"
+                android:layout_marginStart="60dp"
+                android:gravity="center_horizontal|center_vertical"
                 android:text="@string/are_you_sure"
                 android:textAlignment="textEnd"
                 android:textColor="#2B2727"
-                android:textSize="36sp"
+                android:textSize="30sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="@+id/errorIcon"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/errorIcon" />
+                app:layout_constraintTop_toTopOf="@+id/errorIcon"
+                app:layout_constraintVertical_bias="0.447" />
 
             <TextView
                 android:id="@+id/confSubExtension"
