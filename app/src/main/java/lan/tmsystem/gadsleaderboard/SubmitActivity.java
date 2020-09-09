@@ -10,8 +10,6 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.material.snackbar.Snackbar;
-
 import java.util.Objects;
 
 import lan.tmsystem.gadsleaderboard.dialogs.CustomDialog;
@@ -81,11 +79,7 @@ public class SubmitActivity extends AppCompatActivity {
         } else if (txtProjectLink.equals("")) {
             errorLink.setVisibility(View.VISIBLE);
         } else {
-            Snackbar.make(view, "First Name: " + txtFirstName, Snackbar.LENGTH_LONG).show();
-            Snackbar.make(view, "Last Name: " + txtLastName, Snackbar.LENGTH_LONG).show();
-            Snackbar.make(view, "Email Address: " + txtEmail, Snackbar.LENGTH_LONG).show();
-            Snackbar.make(view, "Project: " + txtProjectLink, Snackbar.LENGTH_LONG).show();
-            CustomDialog customDialog = new CustomDialog(SubmitActivity.this);
+            CustomDialog customDialog = new CustomDialog(SubmitActivity.this, txt_first, txt_last, txt_email, txt_link);
             Objects.requireNonNull(customDialog.getWindow()).setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
             customDialog.show();
         }

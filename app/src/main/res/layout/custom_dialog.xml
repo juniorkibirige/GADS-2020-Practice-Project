@@ -7,7 +7,7 @@
     android:background="#34373434">
 
     <LinearLayout
-        android:layout_width="0dp"
+        android:layout_width="390dp"
         android:layout_height="280dp"
         android:layout_marginStart="18dp"
         android:layout_marginEnd="18dp"
@@ -51,6 +51,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/submission_successful"
+                android:textColor="#221D1D"
                 android:textSize="28sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -63,6 +64,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/submission_not_successful"
+                android:textColor="#221D1D"
                 android:textSize="28sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -88,12 +90,12 @@
 
             <TextView
                 android:id="@+id/confSubText"
-                android:layout_width="229dp"
-                android:layout_height="41dp"
+                android:layout_width="282dp"
+                android:layout_height="46dp"
                 android:text="@string/are_you_sure"
                 android:textAlignment="textEnd"
                 android:textColor="#2B2727"
-                android:textSize="24sp"
+                android:textSize="36sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="@+id/errorIcon"
                 app:layout_constraintStart_toStartOf="parent"
@@ -108,25 +110,29 @@
                 android:text="@string/question_mark"
                 android:textAlignment="textStart"
                 android:textColor="#2B2727"
-                android:textSize="30sp"
+                android:textSize="40sp"
                 app:layout_constraintBottom_toBottomOf="@+id/confSubText"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@+id/confSubText"
                 app:layout_constraintTop_toTopOf="@+id/errorIcon"
-                app:layout_constraintVertical_bias="0.887" />
+                app:layout_constraintVertical_bias="1.0" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/confSubBtn"
-                style="@style/Widget.AppCompat.Button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Yes"
+                android:text="@string/yes"
                 android:textSize="18sp"
+                app:backgroundTint="#FFFFFF"
+                app:cornerRadius="8dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/confSubText" />
+                app:layout_constraintTop_toBottomOf="@+id/confSubText"
+                app:rippleColor="#E6580C"
+                app:strokeColor="#E6580C"
+                app:strokeWidth="2dp" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

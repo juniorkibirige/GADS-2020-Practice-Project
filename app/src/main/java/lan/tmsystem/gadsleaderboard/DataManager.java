@@ -10,6 +10,7 @@ public class DataManager {
     private static DataManager ourInstance = null;
     private static String hours = "";
     private static String skilliq = "";
+    private Boolean submissionSuccess = false;
     private List<Hours> mHours = new ArrayList<>();
     private List<SkillIq> mSkillIqs = new ArrayList<>();
 
@@ -51,5 +52,13 @@ public class DataManager {
 
     public void addSkillIq(SkillIq skillIq) {
         mSkillIqs.add(skillIq);
+    }
+
+    public Boolean getSubmissionSuccess() {
+        return submissionSuccess;
+    }
+
+    public void setSubmissionSuccess(Boolean submissionSuccess) {
+        this.submissionSuccess = submissionSuccess;
     }
 }

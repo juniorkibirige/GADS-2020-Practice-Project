@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     tools:context=".MainActivity">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -14,7 +15,8 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:background="#000000">
 
             <TextView
                 android:id="@+id/title"
@@ -28,16 +30,25 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/submit"
-                style="@style/Widget.AppCompat.Button"
                 android:layout_width="99dp"
-                android:layout_height="19dp"
+                android:layout_height="26dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="12dp"
                 android:background="@drawable/start_btn_submit"
+                android:fontFamily="sans-serif-medium"
+                android:foregroundGravity="center_vertical|center_horizontal"
+                android:gravity="center|center_horizontal"
+                android:insetTop="3dp"
+                android:padding="0dp"
+                android:paddingTop="-4dp"
+                android:paddingBottom="0dp"
                 android:text="@string/submit"
+                android:textAllCaps="false"
                 android:textColor="#040303"
+                app:backgroundTint="#FFFFFF"
+                app:iconPadding="0dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -46,7 +57,10 @@
             android:id="@+id/tabs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="?attr/colorPrimary" />
+            android:background="#000000"
+            app:tabIndicatorColor="#FFFFFF"
+            app:tabIndicatorHeight="5dp"
+            app:tabSelectedTextColor="#ffffff" />
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.viewpager.widget.ViewPager

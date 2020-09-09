@@ -94,7 +94,7 @@ public class ConnectionFrag extends Fragment {
         private static int retrn = 1;
         private static int process = 1;
         private DownloadCallback<String> callback;
-        //        String[] urls = {"https://gadsapi.herokuapp.com/api/hours", "https://gadsapi.herokuapp.com/api/skilliq"};
+//        String[] urls = {"https://gadsapi.herokuapp.com/api/hours", "https://gadsapi.herokuapp.com/api/skilliq"};
         String[] urls = {"http://10.0.2.2:5500/api/hours", "http://10.0.2.2:5500/api/skilliq"};
 
         DownloadTask(DownloadCallback<String> callback) {
@@ -181,8 +181,8 @@ public class ConnectionFrag extends Fragment {
                 for (int i = 0; i < hours.length(); i++) {
                     JSONObject h = hours.getJSONObject(i);
 
-                SkillIq skillIq = new SkillIq(h.getString("name"), h.getString("score"), h.getString("country"), h.getString("badgeUrl"));
-                DataManager.getInstance().addSkillIq(skillIq);
+                    SkillIq skillIq = new SkillIq(h.getString("name"), h.getString("score"), h.getString("country"), h.getString("badgeUrl"));
+                    DataManager.getInstance().addSkillIq(skillIq);
                 }
                 publishProgress(DownloadCallback.Progress.PROCESS_INPUT_STREAM_SUCCESS);
             } catch (JSONException e) {

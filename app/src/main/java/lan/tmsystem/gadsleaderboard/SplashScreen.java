@@ -5,7 +5,6 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
 import android.view.View;
 
 import androidx.annotation.Nullable;
@@ -67,7 +66,6 @@ public class SplashScreen extends FragmentActivity implements DownloadCallback<S
 
     @Override
     public void updateFromDownload(String result) {
-        Log.d("UpdateDownload", result);
         if (result.contains("No address associated with hostname") || result.contains("Failed to connect")) {
             View view = (View) findViewById(R.id.cLayout);
             Snackbar.make(view, "Check your Internet Connection!", 5000).show();
@@ -103,24 +101,24 @@ public class SplashScreen extends FragmentActivity implements DownloadCallback<S
         View view = (View) findViewById(R.id.cLayout);
         switch (progressCode) {
             case Progress.ERROR:
-                Log.d("Download Progress", "An error occurred");
+//                Log.d("Download Progress", "An error occurred");
                 Snackbar.make(view, "An error occurred", Snackbar.LENGTH_LONG).show();
                 break;
             case Progress.CONNECT_SUCCESS:
-                Log.d("Download Progress", "Connection established");
-                Snackbar.make(view, "Connection established", Snackbar.LENGTH_LONG).show();
+//                Log.d("Download Progress", "Connection established");
+//                Snackbar.make(view, "Connection established", Snackbar.LENGTH_LONG).show();
                 break;
             case Progress.GET_INPUT_STREAM_SUCCESS:
-                Log.d("Download Progress", "Download File " + percentComplete + "/2 found");
-                Snackbar.make(view, "Download File " + percentComplete + "/2 found", Snackbar.LENGTH_LONG).show();
+//                Log.d("Download Progress", "Download File " + percentComplete + "/2 found");
+//                Snackbar.make(view, "Download File " + percentComplete + "/2 found", Snackbar.LENGTH_LONG).show();
                 break;
             case Progress.PROCESS_INPUT_STREAM_IN_PROGRESS:
-                Log.d("Download Progress", "Processing downloaded data");
-                Snackbar.make(view, "Processing downloaded data", Snackbar.LENGTH_LONG).show();
+//                Log.d("Download Progress", "Processing downloaded data");
+//                Snackbar.make(view, "Processing downloaded data", Snackbar.LENGTH_LONG).show();
                 break;
             case Progress.PROCESS_INPUT_STREAM_SUCCESS:
-                Log.d("Download Progress", "Processing downloaded data " + percentComplete + "/4 finished");
-                Snackbar.make(view, "Processing downloaded data " + percentComplete + "/4 finished", Snackbar.LENGTH_LONG).show();
+//                Log.d("Download Progress", "Processing downloaded data " + percentComplete + "/4 finished");
+//                Snackbar.make(view, "Processing downloaded data " + percentComplete + "/4 finished", Snackbar.LENGTH_LONG).show();
                 break;
         }
     }
