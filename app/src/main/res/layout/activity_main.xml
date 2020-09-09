@@ -30,7 +30,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <com.google.android.material.button.MaterialButton
+            <Button
                 android:id="@+id/submit"
                 android:layout_width="99dp"
                 android:layout_height="26dp"

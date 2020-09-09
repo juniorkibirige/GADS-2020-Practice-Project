@@ -37,13 +37,13 @@ public class SplashScreen extends FragmentActivity implements DownloadCallback<S
         mHandler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                if(!DataManager.getInstance().getData().equals("") && !DataManager.getInstance().getSkilliq().equals("")) {
+                if (!DataManager.getInstance().getData().equals("") && !DataManager.getInstance().getSkilliq().equals("")) {
                     Intent intent = new Intent(SplashScreen.this, MainActivity.class);
                     startActivity(intent);
                     finish();
                 }
             }
-        }, 5000);
+        }, 4000);
     }
 
     @Override

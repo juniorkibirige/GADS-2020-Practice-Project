@@ -5,12 +5,11 @@ import android.app.Dialog;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.google.android.material.button.MaterialButton;
 
 import lan.tmsystem.gadsleaderboard.R;
 import lan.tmsystem.gadsleaderboard.dialogs.googleForm.APIClient;
@@ -24,7 +23,7 @@ public class CustomDialog extends Dialog implements View.OnClickListener {
 
     public Activity mActivity;
     public Dialog d;
-    public MaterialButton yes;
+    public Button yes;
     public ImageView errorIcon, successIcon;
     public TextView errorText, successText, confSubText, confSubExtension;
     public ImageButton cancel;

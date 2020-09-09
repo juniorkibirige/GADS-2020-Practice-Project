@@ -118,13 +118,14 @@
                 app:layout_constraintTop_toTopOf="@+id/errorIcon"
                 app:layout_constraintVertical_bias="1.0" />
 
-            <com.google.android.material.button.MaterialButton
+            <Button
                 android:id="@+id/confSubBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@drawable/border_button"
                 android:text="@string/yes"
+                android:textColor="#EC9347"
                 android:textSize="18sp"
-                app:backgroundTint="#FFFFFF"
                 app:cornerRadius="8dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
